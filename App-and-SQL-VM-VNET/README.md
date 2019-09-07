@@ -1,4 +1,4 @@
-# Very simple deployment of a Windows VM
+# Deploy an Application & SQL Server Windows VM setup
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-vm-simple-windows%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
@@ -22,7 +22,7 @@ If you are new to template deployment, see:
 
 [Azure Resource Manager documentation](https://docs.microsoft.com/azure/azure-resource-manager/)
 
-Note: There is a standard NSG which is applied to the SQL Server VM. You might want to edit to the enforce the following :
+#Note: There is a standard NSG which is applied to the SQL Server VM. You might want to edit to the enforce the following :
 	1. Allow traffic only from the application Subnet
 	2. Open SQL Server port
 	3. Allow RDP from your organization IP : whitelist on NSG. Better option is to remove the Public IP from SQL Server VM and deploy a jumpbox in a new subnet or create a site-to-site VM for mananging SQL Server VM
