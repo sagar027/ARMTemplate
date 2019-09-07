@@ -7,16 +7,22 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-This template allows you to deploy a simple Windows VM using a few different options for the Windows version, using the latest patched version. This will deploy a A2 size VM in the resource group location and return the fully qualified domain name of the VM.
+This template allows you to deploy a combination of Windows Application VM in one subnet and a SQL Server 2017 in another subnet of a single Virtual Network (VNET). 
+There is also a SQL Server configuration section which enforces SQL Server settings like log files, data files storage on disks.
 
-If you are new to Azure virtual machines, see:
+This template is actually fusion of '101-vm-simple-windows(https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows)' and	'101-sql-vm-new-storage(https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-vm-new-storage)'
+The project is created in Visual Studio which lets you validate & deploy from Visual Studio 2019.
 
-- [Azure Virtual Machines](https://azure.microsoft.com/services/virtual-machines/).
-- [Azure Linux Virtual Machines documentation](https://docs.microsoft.com/azure/virtual-machines/linux/)
-- [Azure Windows Virtual Machines documentation](https://docs.microsoft.com/azure/virtual-machines/windows/)
-- [Template reference](https://docs.microsoft.com/azure/templates/microsoft.compute/allversions)
-- [Quickstart templates](https://azure.microsoft.com/resources/templates/?resourceType=Microsoft.Compute&pageNumber=1&sort=Popular)
+Alternative you can also deploy from CLI using :
+
+Validate : az group deployment validate --name <deployment-name> -g <resorce-group> --template-file azuredeploy.json --parameters azuredeploy.parameters.json 
+Deploy : az group deployment create--name <deployment-name> -g <resorce-group> --template-file azuredeploy.json --parameters azuredeploy.parameters.json 
 
 If you are new to template deployment, see:
 
 [Azure Resource Manager documentation](https://docs.microsoft.com/azure/azure-resource-manager/)
+
+Note: There is a standard NSG which is applied to the SQL Server VM. You might want to edit to the enforce the following :
+	1. Allow traffic only from the application Subnet
+	2. Open SQL Server port
+	3. Allow RDP from your organization IP : whitelist on NSG. Better option is to remove the Public IP from SQL Server VM and deploy a jumpbox in a new subnet or create a site-to-site VM for mananging SQL Server VM
