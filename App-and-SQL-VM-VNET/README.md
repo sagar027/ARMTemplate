@@ -10,7 +10,7 @@
 This template allows you to deploy a combination of Windows Application VM in one subnet and a SQL Server 2017 in another subnet of a single Virtual Network (VNET). 
 There is also a SQL Server configuration section which enforces SQL Server settings like log files, data files storage on disks.
 
-This template is actually fusion of '101-vm-simple-windows(https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows)' and	'101-sql-vm-new-storage(https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-vm-new-storage)'
+This template is actually fusion of ['101-vm-simple-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-windows)' and	'[101-sql-vm-new-storage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-sql-vm-new-storage)'
 The project is created in Visual Studio which lets you validate & deploy from Visual Studio 2019.
 
 Alternative you can also deploy from CLI using :
