@@ -10,6 +10,9 @@
     },
     "sqlSku": {
       "value": "Web"
+    },
+    "appName": {
+      "value": "funcapp99aabbccd"
     }
   }
 }
